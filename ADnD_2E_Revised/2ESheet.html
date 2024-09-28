@@ -9,30 +9,13 @@
         <h2 style="color: black;">Changes in <span name="attr_version"></span></h2>
         <div class="sheet-announce-items">
             <ul style="font-style:italic">
-                <li>Updated suggested Tome of Magic spheres to Clerics, Druids, Paladins, and Rangers based on the Priest's Spell Compendium</li>
-                <li>Multi-class THAC0 supported with macros</li>
-                <li>Multi-class Proficiencies supported with macros</li>
-                <li>Added a DM Screen tab with various DM stuff</li>
-                <li>Added Concealed and Secret door search buttons to DM Screen</li>
-                <li>Added Item saving throws table to DM Screen</li>
-                <li>Updated Traits, Special Talents and Disadvantages to use roll template for output</li>
-                <li>Fixed Special Talent rating roll to correctly add modifier</li>
-                <li>Added missing label for Traits, Special Talents, Disadvantages, and Nonweapon proficiencies checks</li>
-                <li>Added actual classes to dropdown for each of the class fields. This is a move towards requiring the correct class is placed in the correct field</li>
-                <li>Added classes dropdown to henchmen class fields</li>
-                <li>Forced saving throw targets to be numbers</li>
-                <li>Added button for updating Character saving throws (Ravenloft saves included). Works for single, multi- and dual-classes.</li>
-                <li>Added button for updating Monster saving throws. Follows description given in DMG.</li>
-                <li>Added DMG notes to monster saving throws.</li>
-                <li>Added automatic THAC0 and Saving throws for Warrior through Psion followers. Animal followers are still manual.</li>
-                <li>Changed Monster Intelligence dropdown to be a single value instead of a range, so that it can be used for calculations.</li>
-                <li>Added missing healing for scroll template</li>
+                <li>Added spells to Grenade-like miss options</li>
+                <li>Added Miscellaneous magical item section</li>
+                <li>Added Rods, Staves and Wands section</li>
+                <li>Added automatic Scroll spell failure that scales with your level</li>
+                <li>Moved Scroll, Potion, and Magical item information to be next to their appropriate sections</li>
+                <li>Corrected and reordered Concealed/Secret doors notes</li>
             </ul>
-            <hr>
-            <p>
-                If you want to help improve the sheet, you can go and vote for these suggestions on the Roll20 forum! With these I could make the sheet even better! :)
-                <span class="sheet-selectable">https://app.roll20.net/forum/post/4922089/gmrolls-that-are-hidden-even-from-the-player-that-makes-the-roll</span>
-            </p>
             <hr>
             <p>
                 To get notified on future updates, discuss changes, or contribute suggestions, please follow this topic on the forum:
@@ -93,7 +76,7 @@
                     <div class="sheet-col">
         
                         <h4>Player and Character</h4>
-                        <table style='width:400px;' class="sheet-default-header">
+                        <table style="width:400px;" class="sheet-default-header">
                             <tr><td colspan="14">Roll20 Name</td></tr>
                             <tr><td colspan="14"><input type="text" name="attr_roll20_name" title="@{roll20_name}" class="sheet-table-dynamic" placeholder="Your Roll20 tag"></td></tr>
                             <tr><td colspan="14">Player Name:</td></tr>
@@ -140,26 +123,46 @@
         
                     <div class="sheet-col">
                         <h4>Character Details</h4>
-                        <table style='width:400px;' class="sheet-default-header">
+                        <table style="width:400px;" class="sheet-default-header">
                             <tr>
-                                <td>Race:<br><input type="text" name="attr_race" title="@{race}" class="sheet-half" placeholder="PC's Race" list="races"/><span></span></td>
-                                <td>Gender:<br><input type="text" name="attr_gender" title="@{gender}" class="sheet-half" placeholder="PC's Gender"/></td>
+                                <td>Race:</td>
+                                <td>Gender:</td>
                             </tr>
                             <tr>
-                                <td>Hair Color:<br><input type="text" name="attr_hair-color" title="@{hair-color}" class="sheet-half" placeholder="Or skull features (horns, etc)"/></td>
-                                <td>Eye Color:<br><input type="text" name="attr_eye-color" title="@{eye-color}" class="sheet-half" placeholder="Color or special eye type"/></td>
+                                <td><input type="text" name="attr_race" title="@{race}" class="sheet-half" placeholder="PC's Race" list="races"/><span></span></td>
+                                <td><input type="text" name="attr_gender" title="@{gender}" class="sheet-half" placeholder="PC's Gender"/></td>
                             </tr>
                             <tr>
-                                <td>Complexion:<br><input type="text" name="attr_complexion" title="@{complexion}" class="sheet-half" placeholder="Skin color"/></td>
-                                <td>Features:<br><input type="text" name="attr_distinguishing-features" title="@{distinguishing-features}" class="sheet-half" placeholder="Birthmarks, scars, etc"/></td>
+                                <td>Hair Color:</td>
+                                <td>Eye Color:</td>
                             </tr>
                             <tr>
-                                <td>Homeland:<br><input type="text" name="attr_homeland" title="@{homeland}" class="sheet-half" placeholder="PC's Homeland"/></td>
-                                <td>Deity:<br><input type="text" name="attr_deity" title="@{deity}" class="sheet-half" placeholder="PC's Deity"/></td>
+                                <td><input type="text" name="attr_hair-color" title="@{hair-color}" class="sheet-half" placeholder="Or skull features (horns, etc)"/></td>
+                                <td><input type="text" name="attr_eye-color" title="@{eye-color}" class="sheet-half" placeholder="Color or special eye type"/></td>
                             </tr>
                             <tr>
-                                <td>Vision:<br><input type="text" name="attr_vision-details" title="@{vision-details}" class="sheet-half" placeholder="Vision Details"/></td>
-                                <td>Secondary Skill:<br><input type="text" name="attr_secskill" title="@{secskill}" class="sheet-half" placeholder="PC's Secondary Skill"/></td>
+                                <td>Complexion:</td>
+                                <td>Features:</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="attr_complexion" title="@{complexion}" class="sheet-half" placeholder="Skin color"/></td>
+                                <td><input type="text" name="attr_distinguishing-features" title="@{distinguishing-features}" class="sheet-half" placeholder="Birthmarks, scars, etc"/></td>
+                            </tr>
+                            <tr>
+                                <td>Homeland:</td>
+                                <td>Deity:</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="attr_homeland" title="@{homeland}" class="sheet-half" placeholder="PC's Homeland"/></td>
+                                <td><input type="text" name="attr_deity" title="@{deity}" class="sheet-half" placeholder="PC's Deity"/></td>
+                            </tr>
+                            <tr>
+                                <td>Vision:</td>
+                                <td>Secondary Skill:</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="attr_vision-details" title="@{vision-details}" class="sheet-half" placeholder="Vision Details"/></td>
+                                <td><input type="text" name="attr_secskill" title="@{secskill}" class="sheet-half" placeholder="PC's Secondary Skill"/></td>
                             </tr>
                         </table>
                         <table style="width:400px;" class="sheet-default-header">
@@ -375,13 +378,23 @@
                             </tr>
                         </table>
                         <details>
-                            <summary>Notes for finding secret doors</summary>
+                            <summary>Notes for finding Concealed/Secret doors</summary>
+                            <strong>Concealed doors</strong>
                             <ul>
-                                <li>Non-elven characters have a 1 in 6 chance of finding a secret door when searching for it. Sage Advice #152 p. 14 + Sage Advice #273 p. 114</li>
-                                <li>Elves and Half-elves have a 2 in 6 chance of finding a secret door when searching for it. PHB p. 29-31</li>
-                                <li>Elves and Half-elves have a 1 in 6 chance of finding a concealed door when merely passing with in 10 feet of it. PHB p. 29-31</li>
-                                <li>DM information is found in DMG p. 176</li>
+                                <li><strong>All characters</strong> automatically find a <em>concealed door</em> when actively searching for it. (DMG p. 176)</li>
+                                <li><strong>Elves</strong> and <strong>Half-elves</strong> have a 3 in 6 chance of finding a <em>concealed door</em> when merely passing with in 10 feet of it.
+                                    <ul>
+                                        <li>This is a departure from the PHB p. 29-31. Since the DMG states that all character automatically finds a <em>concealed door</em> when actively searching, the Elf and Half-elf 3 in 6 of actively finding a <em>concealed door</em> has been moved from the active search to passive.
+                                            </li>
+                                    </ul>
+                                </li>
                             </ul>
+                            <strong>Secret doors</strong>
+                            <ul>
+                                <li><strong>Non-elven characters</strong> have a 1 in 6 chance of finding a <em>secret door</em> when actively searching for it. (Sage Advice #152 p. 14 + Sage Advice #273 p. 114)</li>
+                                <li><strong>Elves</strong> and <strong>Half-elves</strong> have a 2 in 6 chance of finding a <em>secret door</em> when actively searching for it. (PHB p. 29-31)</li>
+                            </ul>
+                            <strong>DM information on doors is found in the DMG p. 176</strong>
                         </details>
                         <hr>
                         <h4>Movement</h4>
@@ -939,15 +952,15 @@
                         <details>
                             <summary>Saving throw modifier notes</summary>
                             <ul>
-                                <li>Dwarves, Gnomes and Halflings get +1 saving throw vs Wands, Staves, Rods and Spells for every 3½ points in Constitution. (PHB p. 28, 30, 32)</li>
-                                <li>Dwarves and Halflings get the same bonus vs poisons. (PHB p. 28, 30)</li>
-                                <li>Elves have 90% resistance to Sleep and Charm-related spells. (PHB p. 29)</li>
-                                <li>Half-Elves have 30% resistance to Sleep and Charm-related spells. (PHB p.30)</li>
-                                <li>Poison save from high Constitution affects Humans, Elves, Gnomes, and Half-elves. It does <b>not</b> affect Dwarves and Halflings (PHB p. 21)</li>
-                                <li>Defense Adjustment from Dexterity affects saving throws against attacks that can be dodged, like lightning bolt. (PHB p. 20, DMG p. 93)</li>
-                                <li>Magical Defense Adjustment from Wisdom only affects spells that attack the Mind such as: <em>beguiling, charm, fear, hypnosis, illusions, possession, suggestion,</em> etc. (PHB p. 23, DMG p. 93)</li>
-                                <li>Psionicists gain a +2 bonus on all saving throws vs. enchantment/charm spells and the like. (The Complete Psionics Handbook p. 14)</li>
-                                <li>Magical Armor gives bonus to saving throws vs something physical. Magical armor never gives a saving throw bonus against gas (which it cannot block), poison (which operates internally), and spells that are mental or that cause no physical damage. (DMG p. 93)</li>
+                                <li><strong>Dwarves, Gnomes, Halflings:</strong> Get +1 saving throw vs Wands, Staves, Rods and Spells for every 3½ points in Constitution. (PHB p. 28, 30, 32)</li>
+                                <li><strong>Dwarves, Halflings:</strong> Get +1 saving throw vs poisons for every 3½ points in Constitution. (PHB p. 28, 30)</li>
+                                <li><strong>Elves</strong> have 90% resistance to Sleep and Charm-related spells. (PHB p. 29)</li>
+                                <li><strong>Half-Elves</strong> have 30% resistance to Sleep and Charm-related spells. (PHB p.30)</li>
+                                <li><strong>Humans, Elves, Gnomes, Half-elves:</strong> Get bonus to saving throw vs Poison from high Constitution. It does <b>not</b> affect Dwarves and Halflings (PHB p. 21)</li>
+                                <li><strong>Dexterity Defense Adjustment:</strong> Affects saving throws against attacks that can be <strong>dodged</strong>, like lightning bolt. (PHB p. 20, DMG p. 93)</li>
+                                <li><strong>Wisdom Magical Defense Adjustment:</strong> Only affects spells that attack the <strong>Mind</strong> such as: <em>beguiling, charm, fear, hypnosis, illusions, possession, suggestion,</em> etc. (PHB p. 23, DMG p. 93)</li>
+                                <li><strong>Psionicists:</strong> Gain a +2 bonus on all saving throws vs. enchantment/charm spells and the like. (The Complete Psionics Handbook p. 14)</li>
+                                <li><strong>Magical Armor:</strong> Gives bonus to saving throws vs something physical. Magical armor never gives a saving throw bonus against gas (which it cannot block), poison (which operates internally), and spells that are mental or that cause no physical damage. (DMG p. 93)</li>
                             </ul>
                         </details>
                         <hr>
@@ -1592,20 +1605,6 @@
                 </tr>
             </table>
             <br>
-            <div style="display: none;">
-                <button type="roll" name="roll_acid-hit" value="/em rolls [[2d4]] acid damage using their Acid! (Direct hit)"></button>
-                <button type="roll" name="roll_acid-splash" value="/em rolls [[1]] acid damage using their Acid! (Splash)"></button>
-                <button type="roll" name="roll_holy-water-hit" value="/em rolls [[1d6+1]] damage using their Holy water! (Direct hit)"></button>
-                <button type="roll" name="roll_holy-water-splash" value="/em rolls [[2]] damage using their Holy water! (Splash)"></button>
-                <button type="roll" name="roll_oil-lit-hit1" value="/em rolls [[2d6]] fire damage using their Oil (lit)! (Direct hit, first round)"></button>
-                <button type="roll" name="roll_oil-lit-hit2" value="/em rolls [[1d6]] fire damage using their Oil (lit)! (Direct hit, second round)"></button>
-                <button type="roll" name="roll_oil-lit-splash" value="/em rolls [[1d3]] fire damage using their Oil (lit)! (Splash)"></button>
-                <input type="text" name="attr_custom-grenade-name">
-                <input type="text" name="attr_custom-grenade-hit">
-                <input type="text" name="attr_custom-grenade-splash">
-                <button type="roll" name="roll_custom-grenade-hit" value="/em rolls [[@{custom-grenade-hit}]] damage using their @{custom-grenade-name}! (Direct hit)"></button>
-                <button type="roll" name="roll_custom-grenade-splash" value="/em rolls [[@{custom-grenade-splash}]] damage using their @{custom-grenade-name}! (Splash)"></button>
-            </div>
     
             <div class="sheet-tab-content sheet-section-weapon-standard">
                 <details>
@@ -1970,7 +1969,7 @@
                     </table>
                     </fieldset>
                     <br>
-                    <button type="action" name="act_grenade-miss" class="btn" >Grenade miss!</button>
+                    <button type="action" name="act_grenade-miss" class="btn sheet-action-button-roll">Grenade-like miss!</button>
                     <br>
                     <br>
                     <h4>Ammunition</h4>
@@ -2353,7 +2352,7 @@
                     </table>
                     </fieldset>
                     <br>
-                    <button type="action" name="act_grenade-miss" class="btn">Grenade miss!</button>
+                    <button type="action" name="act_grenade-miss" class="btn sheet-action-button-roll">Grenade-like miss!</button>
                     <br>
                     <br>
                     <h4>Ammunition</h4>
@@ -11920,7 +11919,7 @@
         </div>
         <details>
             <summary>Spell Memorization & Casting</summary>
-            <b>Memorization</b>
+            <strong>Memorization</strong>
             <ul>
                 <li>Requires a clear mind from a restful night's sleep. (PHB p. 107)</li>
                 <li>10 minutes of study/prayer per level of the spell. Ie. 1st-level: 10 minutes, 2nd-level: 20 minutes, and so on. (PHB p. 107)</li>
@@ -11928,7 +11927,7 @@
                 <li>Reversible spells must be memorized as the desired version (PHB p. 113-114)</li>
                 <li>Scrolls require no memorization (PHB p. 144 / DMG p. 118)</li>
             </ul>
-            <b>Casting</b>
+            <strong>General spellcasting information</strong>
             <ul>
                 <li>1 Round ~ 1 minute. 10 Rounds = 1 Turn. (PHB p. 122)</li>
                 <li>1 Turn ~ 10 minute. 6 Turns ~ 1 Hour. (PHB p. 122)</li>
@@ -11936,46 +11935,6 @@
                 <li>Priest holy symbols are not lost when a spell is cast (PHB p. 114)</li>
                 <li>Touch-delivered spells uses the best available THAC0, so a fighter/mage can use their fighter THAC0 (Sage Advice #203 p. 89).</li>
                 <li>Touch-delivered spells against the targets normal armor class, including adjustments for armor worn (Sage Advice #232 p. 93). If the Player's Option: Spells & Magic rules are used, some spells ignore the armor of the target, but the armor magical bonuses still apply. (PO: S&M p. 120)</li>
-                <li><b>Casting from Scrolls</b>
-                    <ul>
-                        <li>All classes can read and cast <em>Protection Scrolls</em> (DMG p. 196)<br>
-                            Protection Scrolls, unless stated otherwise, have a Initiative Modifier of +3 (Sage Advice #152 p. 59)
-                        </li>
-                        <li><strong>Classes</strong>
-                            <ul>
-                                <li>Wizards can use (read and cast from) wizard spell scrolls (PHB p. 42 / DMG p. 196)<br>
-                                    Wizards can use spells from scrolls outside their schools (Sage Advice #152 p. 14, Sage Advice #217 p. 84)<br>
-                                    Wizards can use spells from scrolls that are higher level than the wizard's Intelligence normally allows (Sage Advice #219. p. 81)<br>
-                                    Wizards can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)
-                                </li>
-                                <li>Priests can use (read and cast from) priest spell scrolls (PHB p. 48 / DMG p. 196)<br>
-                                    Priests can use spells from scrolls outside their spheres (Sage Advice #152 p. 14, Sage Advice #217 p. 84)<br>
-                                    Priests can use spells from scrolls that are higher level than the priest's Wisdom normally allows (Sage Advice #219. p. 81)<br>
-                                    Priests can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)
-                                </li>
-                                <li>Thieves can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 57)</li>
-                                <li>Bards can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 61)</li>
-                                <li>Druids <strong>cannot</strong> use priest scrolls unless specifically allowed for druids (PHB p. 52)</li>
-                                <li>Paladins <strong>cannot</strong> cast spells from clerical or druidical scrolls (PHB p. 39 / DMG p. 196)</li>
-                                <li>Rangers <strong>cannot</strong> use priest scrolls (PHB p. 39 / DMG p. 196)</li>
-                            </ul>
-                        </li>
-                        <li>Scrolls have a read time equal to the inscribed spell's cast time (PHB p. 125 / DMG p. 196)</li>
-                        <li>Scrolls are cast at the level at which they were inscribed (DMG p. 196)</li>
-                        <li>Scrolls require no material components to cast (PHB p. 144 / DMG p. 118)</li>
-                        <li>No adverse effects associated with casting the spell are suffered by the reader. These requirements or penalties have already been fulfilled or suffered by the creator of the scroll (DMG p. 196)</li>
-                        <li><strong>Scroll Spell Failure</strong>
-                            <ul>
-                                <li>Wizards and Priests casting scrolls containing spells of a level too high for the character to cast incurs a 5% failure rate per level between the character's present level and the level at which the spell could be cast (DMG p. 196)<br>
-                                    Wizards and Priests scroll spell failure is either Total Failure (nothing happens) or Reverse / Harmful Failure effect (DMG p. 196)
-                                </li>
-                                <li>Thieves casting scrolls have 25% failure chance. Failure is always a reverse of the effect (PHB p. 58)</li>
-                                <li>Bards casting scrolls have 15% failure chance. Failure is always a reverse of the effect (PHB p. 61)</li>
-                                <li>Dual/Multi-class thieves/mages uses the best failure chance. Failure follows the rules of the class the chance belongs to (Sage Advice #260 p. 23)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </details>
         <details>
@@ -12007,50 +11966,6 @@
                         <li>Regardless of success or failure of the research, the scroll is destroyed. (DMG p. 61)</li>
                     </ul>
                 </li>
-            </ul>
-        </details>
-        <details>
-            <summary>Scribing Scrolls</summary>
-            <b>Wizards</b>
-            <ul>
-                <li>Gain the potential to scribe scrolls at 9th level (PHB p. 43 / DMG p. 117)</li>
-                <li>Must have their spell book at hand to guide their work (DMG p. 119)</li>
-            </ul>
-            <b>Priests</b>
-            <ul>
-                <li>Gain the potential to scribe scrolls at 7th level (DMG p. 117)</li>
-                <li>Must work on a specially prepared altar (DMG p. 119)</li>
-            </ul>
-            The spellcaster knows the basics of the art and has learned where to look for the information he needs to make the attempt. The exact process for each spell is still a mystery to him. He may consult a sage, seek the guidance of a higher level spellcaster, or even use spells to call upon greater powers. (DMG p.117-119)
-        </details>
-        <details>
-            <summary>Brewing Potions</summary>
-            <b>Wizards</b>
-            <ul>
-                <li>Gain the potential to brew potions at 9th level (PHB p. 43 / DMG p. 117)</li>
-                <li>Potions are primarily the province of wizards, although healing and curing potions are beyond the ken of wizards (DMG p. 119)</li>
-                <li>Require a complete alchemical laboratory (DMG p. 120)</li>
-            </ul>
-            <b>Priests</b>
-            <ul>
-                <li>Gain the potential to brew potions at 9th level (DMG p. 117)</li>
-                <li>Can prepare potions related to healing and cures (DMG p. 119)</li>
-                <li>Require an altar specially consecrated to the purpose of brewing potions (DMG p. 120)</li>
-            </ul>
-            <b>Druids</b>
-            <ul>
-                <li>Druids who spends 3 slots in the Herbalism nonweapon proficiency can create magical herbal brews (The Complete Druid's Handbook p. 103)</li>
-            </ul>
-        </details>
-        <details>
-            <summary>Fabricating other Magical items</summary>
-            <b>Wizards</b>
-            <ul>
-                <li>Gain the potential to create other magical items at 11th level, if he has the spells (DMG p. 117)</li>
-            </ul>
-            <b>Priests</b>
-            <ul>
-                <li>Gain the potential to create other magical items at 11th level (DMG p. 117)</li>
             </ul>
         </details>
     </div>
@@ -12202,7 +12117,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionclair-science-macro" title="@{repeating_psion-clairvoyance-science_$X_psionclair-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionclair-science-macro" title="@{repeating_psion-clairvoyance-science_$X_psionclair-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12248,7 +12163,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionclair-macro" title="@{repeating_psion-clairvoyance_$X_psionclair-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionclair-macro" title="@{repeating_psion-clairvoyance_$X_psionclair-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12297,7 +12212,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionkinetic-science-macro" title="@{repeating_psion-kinetic-science_$X_psionkinetic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionkinetic-science-macro" title="@{repeating_psion-kinetic-science_$X_psionkinetic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12343,7 +12258,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionkinetic-macro" title="@{repeating_psion-psychokinesis_$X_psionkinetic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionkinetic-macro" title="@{repeating_psion-psychokinesis_$X_psionkinetic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12392,7 +12307,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionmetabolic-science-macro" title="@{repeating_psion-metabolic-science_$X_psionmetabolic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionmetabolic-science-macro" title="@{repeating_psion-metabolic-science_$X_psionmetabolic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12438,7 +12353,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionmetabolic-macro" title="@{repeating_psion-metabolic_$X_psionmetabolic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionmetabolic-macro" title="@{repeating_psion-metabolic_$X_psionmetabolic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12487,7 +12402,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionportation-science-macro" title="@{repeating_psion-portation-science_$X_psionportation-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionportation-science-macro" title="@{repeating_psion-portation-science_$X_psionportation-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12533,7 +12448,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionportation-macro" title="@{repeating_psion-portation_$X_psionportation-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionportation-macro" title="@{repeating_psion-portation_$X_psionportation-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12582,7 +12497,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psiontelepathic-science-macro" title="@{repeating_psion-telepathic-science_$X_psiontelepathic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psiontelepathic-science-macro" title="@{repeating_psion-telepathic-science_$X_psiontelepathic-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12628,7 +12543,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psiontelepathic-macro" title="@{repeating_psion-telepathy_$X_psiontelepathic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psiontelepathic-macro" title="@{repeating_psion-telepathy_$X_psiontelepathic-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12677,7 +12592,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionmeta-science-macro" title="@{repeating_psion-metapsionic-science_$X_psionmeta-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionmeta-science-macro" title="@{repeating_psion-metapsionic-science_$X_psionmeta-science-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12723,7 +12638,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionmeta-macro" title="@{repeating_psion-metapsionics_$X_psionmeta-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionmeta-macro" title="@{repeating_psion-metapsionics_$X_psionmeta-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12772,7 +12687,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psionattacking-macro" title="@{repeating_psion-attack5_$X_psionattacking-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psionattacking-macro" title="@{repeating_psion-attack5_$X_psionattacking-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -12818,7 +12733,7 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td colspan="100">
-                                        <textarea type="text" name="attr_psiondefending-macro" title="@{repeating_psion-defense5_$X_psiondefending-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
+                                        <textarea name="attr_psiondefending-macro" title="@{repeating_psion-defense5_$X_psiondefending-macro}" class="sheet-table-dynamic" placeholder="Macro"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -13796,21 +13711,21 @@
                                 </tr>
                                 <tr>
                                     <td class="sheet-td-dynamic100">
-                                        <input type="text" name="attr_potion" title="@{repeating_potions_$X_potion}" class="sheet-table-dynamic" placeholder="Name of Potion.">
+                                        <input type="text" name="attr_potion" title="@{repeating_potions_$X_potion}" class="sheet-table-dynamic" placeholder="Name of potion">
                                     </td>
                                     <td><input type="text" name="attr_potionqty" title="@{repeating_potions_$X_potionqty}" class="sheet-small" placeholder="#"></td>
                                     <td><input type="text" name="attr_potion-speed" title="@{repeating_potions_$X_potion-speed}" class="sheet-small" value="4"></td>
-                                    <td><button type="roll" name="attr_potion-initiative" title="%{repeating_potions_$X_potion-initiative}" value="/gmroll [[{1d10cs1cf10+(@{potion-speed} [Potion])-(@{misc-mod}), {1}}kh1]] [Initiative (@{potion})]&{tracker}">Initiative</button></td>
+                                    <td><button type="roll" name="attr_potion-initiative" title="%{repeating_potions_$X_potion-initiative}" value="/gmroll [[{1d10cs1cf10+(@{potion-speed} [4])-(@{misc-mod}), {1}}kh1]] [Initiative (@{potion})]&{tracker}">Initiative</button></td>
                                     <td><button type="roll" name="attr_potion-roll" title="%{repeating_potions_$X_potion-roll}" value="@{potion-macro}">T</button></td>
                                     <td><button type="action" name="act_show" class="btn sheet-hidden sheet-fold sheet-show">▼</button><button type="action" name="act_hide" class="btn sheet-hidden sheet-fold">▲</button></td>
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
-                                    <td colspan="6"><textarea type="text" name="attr_potion-macro" title="@{repeating_potions_$X_potion-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text."></textarea></td>
+                                    <td colspan="6"><textarea name="attr_potion-macro" title="@{repeating_potions_$X_potion-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text"></textarea></td>
                                 </tr>
                             </table>
                         </fieldset>
                         <details>
-                            <summary>Potion info</summary>
+                            <summary>Potion initiative and disrupt information</summary>
                             <ul>
                                 <li>Potion simple initiative modifier: +4, unless stated otherwise (PHB p. 125 / DMG p. 79)</li>
                                 <li>Potion detailed initiative modifier (DMG p. 191):
@@ -13820,7 +13735,27 @@
                                         <li>Magical oil poured over the body and smeared: 1d4+1</li>
                                     </ul>
                                 </li>
+                                <li>Potions and Oils is not disrupted by successful hit, damage, or failing a saving throw, but the container holding the liquid can be smashed before it is imbibed or applied. (Sage Advice #214 p. 78)</li>
                                 <li>Potion duration: 4+1d4 turns, unless otherwise stated</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Brewing Potions</summary>
+                            <b>Wizards</b>
+                            <ul>
+                                <li>Gain the potential to brew potions at 9th level (PHB p. 43 / DMG p. 117)</li>
+                                <li>Potions are primarily the province of wizards, although healing and curing potions are beyond the ken of wizards (DMG p. 119)</li>
+                                <li>Require a complete alchemical laboratory (DMG p. 120)</li>
+                            </ul>
+                            <b>Priests</b>
+                            <ul>
+                                <li>Gain the potential to brew potions at 9th level (DMG p. 117)</li>
+                                <li>Can prepare potions related to healing and cures (DMG p. 119)</li>
+                                <li>Require an altar specially consecrated to the purpose of brewing potions (DMG p. 120)</li>
+                            </ul>
+                            <b>Druids</b>
+                            <ul>
+                                <li>Druids who spends 3 slots in the Herbalism nonweapon proficiency can create magical herbal brews (The Complete Druid's Handbook p. 103)</li>
                             </ul>
                         </details>
                         <br>
@@ -13835,19 +13770,135 @@
                                 </tr>
                                 <tr>
                                     <td class="sheet-td-dynamic100">
-                                        <input type="text" name="attr_dust" title="@{repeating_dusts_$X_dust}" class="sheet-table-dynamic" placeholder="Name of Dust.">
+                                        <input type="text" name="attr_dust" title="@{repeating_dusts_$X_dust}" class="sheet-table-dynamic" placeholder="Name of dust">
                                     </td>
                                     <td><input type="text" name="attr_dustqty" title="@{repeating_dusts_$X_dustqty}" class="sheet-small" placeholder="#"></td>
                                     <td><input type="text" name="attr_dust-speed" title="@{repeating_dusts_$X_dust-speed}" class="sheet-small" value="3"></td>
-                                    <td><button type="roll" name="attr_dust-initiative" title="%{repeating_dusts_$X_dust-initiative}" value="/gmroll [[{1d10cs1cf10+(@{dust-speed} [Dust])-(@{misc-mod}), {1}}kh1]] [Initiative (@{dust})]&{tracker}">Initiative</button></td>
+                                    <td><button type="roll" name="attr_dust-initiative" title="%{repeating_dusts_$X_dust-initiative}" value="/gmroll [[{1d10cs1cf10+(@{dust-speed} [3])-(@{misc-mod}), {1}}kh1]] [Initiative (@{dust})]&{tracker}">Initiative</button></td>
                                     <td><button type="roll" name="attr_dust-roll" title="%{repeating_dusts_$X_dust-roll}" value="@{dust-macro}">T</button></td>
                                     <td><button type="action" name="act_show" class="btn sheet-hidden sheet-fold sheet-show">▼</button><button type="action" name="act_hide" class="btn sheet-hidden sheet-fold">▲</button></td>
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
-                                    <td colspan="6"><textarea type="text" name="attr_dust-macro" title="@{repeating_dusts_$X_dust-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text."></textarea></td>
+                                    <td colspan="6"><textarea name="attr_dust-macro" title="@{repeating_dusts_$X_dust-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text"></textarea></td>
                                 </tr>
                             </table>
                         </fieldset>
+                        <details>
+                            <summary>Dust initiative and disrupt information</summary>
+                            <ul>
+                                <li>Miscellaneous magical items have an initiative modifier: +3, unless stated otherwise (PHB p. 125 / DMG p. 79)</li>
+                                <li>Miscellaneous magical items do not require concentration and therefore usually cannot be disrupted (Sage Advice #157 p. 25 + Sage Advice #214 p. 78)</li>
+                            </ul>
+                        </details>
+                        <br>
+                        <h4>Miscellaneous Magical Items</h4>
+                        <fieldset class="repeating_magic-items">
+                            <table class="sheet-default-header-thead">
+                                <thead class="sheet-collapse sheet-show-first">
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3" class="sheet-centering">Charges</td>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Cur</td>
+                                    <td>/</td>
+                                    <td>Max</td>
+                                    <td colspan="2">Speed</td>
+                                    <td colspan="2">Macro</td>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td class="sheet-td-dynamic100">
+                                        <input type="text" name="attr_magic-item" title="@{repeating_magic-items_$X_magic-item}" class="sheet-table-dynamic" placeholder="Name of magic item">
+                                    </td>
+                                    <td><input type="text" name="attr_magic-item-charges" title="@{repeating_magic-items_$X_magic-item-charges}" class="sheet-small" placeholder="#"></td>
+                                    <td>/</td>
+                                    <td><input type="text" name="attr_magic-item-charges_max" title="@{repeating_magic-items_$X_magic-item-charges|max}" class="sheet-small" placeholder="#"></td>
+                                    <td><input type="text" name="attr_magic-item-speed" title="@{repeating_magic-items_$X_magic-item-speed}" class="sheet-small" value="3"></td>
+                                    <td><button type="roll" name="attr_magic-item-initiative" title="%{repeating_magic-items_$X_magic-item-initiative}" value="/gmroll [[{1d10cs1cf10+(@{magic-item-speed} [magic item])-(@{misc-mod}), {1}}kh1]] [Initiative (@{magic-item})]&{tracker}">Initiative</button></td>
+                                    <td><button type="roll" name="attr_magic-item-roll" title="%{repeating_magic-items_$X_magic-item-roll}" value="@{magic-item-macro}">T</button></td>
+                                    <td><button type="action" name="act_show" class="btn sheet-hidden sheet-fold sheet-show">▼</button><button type="action" name="act_hide" class="btn sheet-hidden sheet-fold">▲</button></td>
+                                </tr>
+                                <tr class="sheet-hidden sheet-fold">
+                                    <td colspan="8"><textarea name="attr_magic-item-macro" title="@{repeating_magic-items_$X_magic-item-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text"></textarea></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <details>
+                            <summary>Miscellaneous magical items initiative and disrupt information</summary>
+                            <ul>
+                                <li>Miscellaneous magical items have an initiative modifier: +3, unless stated otherwise (PHB p. 125 / DMG p. 79)</li>
+                                <li>Rings, weapons, armor, and miscellaneous magical items generally have very short command words and therefore usually cannot be disrupted (Sage Advice #157 p. 25 + Sage Advice #214 p. 78)</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Fabricating Magical items</summary>
+                            <b>Wizards</b>
+                            <ul>
+                                <li>Gain the potential to create other magical items at 11th level, if he has the spells (DMG p. 117)</li>
+                            </ul>
+                            <b>Priests</b>
+                            <ul>
+                                <li>Gain the potential to create other magical items at 11th level (DMG p. 117)</li>
+                            </ul>
+                        </details>
+                        <br>
+                        <h4>Rods, Staves, and Wands</h4>
+                        <fieldset class="repeating_wands">
+                            <table class="sheet-default-header-thead">
+                                <thead class="sheet-collapse sheet-show-first">
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3" class="sheet-centering">Charges</td>
+                                    <td colspan="4"></td>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Cur</td>
+                                    <td>/</td>
+                                    <td>Max</td>
+                                    <td colspan="2">Speed</td>
+                                    <td colspan="2">Macro</td>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td class="sheet-td-dynamic100">
+                                        <input type="text" name="attr_wand" title="@{repeating_wands_$X_wand}" class="sheet-table-dynamic" placeholder="Name of rod/stave/wand">
+                                    </td>
+                                    <td><input type="text" name="attr_wand-charges" title="@{repeating_wands_$X_wand-charges}" class="sheet-small" placeholder="#"></td>
+                                    <td>/</td>
+                                    <td><input type="text" name="attr_wand-charges_max" title="@{repeating_wands_$X_wand-charges|max}" class="sheet-small" placeholder="#"></td>
+                                    <td><input type="text" name="attr_wand-speed" title="@{repeating_wands_$X_wand-speed}" class="sheet-small" value="3"></td>
+                                    <td><button type="roll" name="attr_wand-initiative" title="%{repeating_wands_$X_wand-initiative}" value="/gmroll [[{1d10cs1cf10+(@{wand-speed} [rod/stave/wand])-(@{misc-mod}), {1}}kh1]] [Initiative (@{wand})]&{tracker}">Initiative</button></td>
+                                    <td><button type="roll" name="attr_wand-roll" title="%{repeating_wands_$X_wand-roll}" value="@{wand-macro}">T</button></td>
+                                    <td><button type="action" name="act_show" class="btn sheet-hidden sheet-fold sheet-show">▼</button><button type="action" name="act_hide" class="btn sheet-hidden sheet-fold">▲</button></td>
+                                </tr>
+                                <tr class="sheet-hidden sheet-fold">
+                                    <td colspan="8"><textarea name="attr_wand-macro" title="@{repeating_wands_$X_wand-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text"></textarea></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        <details>
+                            <summary>Rod, Stave, and Wand initiative and disrupt information</summary>
+                            <ul>
+                                <li>Rods, Staves, and Wands have the following initiative modifiers unless the item description says otherwise (PHB p. 125 / DMG p. 196)
+                                    <ul>
+                                        <li>Rod: +1</li>
+                                        <li>Stave: +2</li>
+                                        <li>Wand: +3</li>
+                                    </ul>
+                                </li>
+                                <li>If the optional command word rule is in use:
+                                    <ul>
+                                        <li>The majority of rods, staves, and wands can be disrupted. If rod, stave, or wand use is disrupted, the appropriate charges are expended and lost. (Sage Advice #157 p. 25)</li>
+                                        <li>Some rods, staves, and wands that are usable by non-spell-casters cannot be disrupted. (Sage Advice #157 p. 25)</li>
+                                    </ul>
+                                </li>
+                                <li>If the optional command world rule is <strong>not</strong> in use, then rods, staves, and wands cannot be disrupted.</li>
+                            </ul>
+                        </details>
                         <br>
                         <h4>Scrolls</h4>
                         <fieldset class="repeating_scrolls">
@@ -13873,55 +13924,116 @@
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
                                     <td class="sheet-default-header">Spell failure:</td>
-                                    <td><input type="number" name="attr_scroll-failure" title="@{repeating_scrolls_$X_scroll-failure}" class="sheet-minish" value="0"></td>
+                                    <td colspan="5"><input type="text" name="attr_scroll-failure" title="@{repeating_scrolls_$X_scroll-failure}" class="sheet-table-dynamic" value="0"></td>
                                     <td style="font-weight: bold">%</td>
                                 </tr>
                                 <tr class="sheet-hidden sheet-fold">
-                                    <td colspan="7"><textarea type="text" name="attr_scroll-macro" title="@{repeating_scrolls_$X_scroll-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text."></textarea></td>
+                                    <td colspan="7"><textarea name="attr_scroll-macro" title="@{repeating_scrolls_$X_scroll-macro}" class="sheet-table-dynamic" placeholder="Enter Macro text."></textarea></td>
                                 </tr>
                             </table>
                         </fieldset>
                         <details>
                             <summary>Casting from Scrolls</summary>
                             <ul>
-                                <li>All classes can read and cast <em>Protection Scrolls</em> (DMG p. 196)<br>
+                                <li><strong>All classes</strong> can read and cast <em>Protection Scrolls</em> (DMG p. 196)<br>
                                     Protection Scrolls, unless stated otherwise, have a Initiative Modifier of +3 (Sage Advice #152 p. 59)
                                 </li>
-                                <li><strong>Classes</strong>
+                                <li><strong>Wizards</strong>
                                     <ul>
-                                        <li>Wizards can use (read and cast from) wizard spell scrolls (PHB p. 42 / DMG p. 196)<br>
-                                            Wizards can use spells from scrolls outside their schools (Sage Advice #152 p. 14, Sage Advice #217 p. 84)<br>
-                                            Wizards can use spells from scrolls that are higher level than the wizard's Intelligence normally allows (Sage Advice #219. p. 81)<br>
-                                            Wizards can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)
-                                        </li>
-                                        <li>Priests can use (read and cast from) priest spell scrolls (PHB p. 48 / DMG p. 196)<br>
-                                            Priests can use spells from scrolls outside their spheres (Sage Advice #152 p. 14, Sage Advice #217 p. 84)<br>
-                                            Priests can use spells from scrolls that are higher level than the priest's Wisdom normally allows (Sage Advice #219. p. 81)<br>
-                                            Priests can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)
-                                        </li>
-                                        <li>Thieves can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 57)</li>
-                                        <li>Bards can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 61)</li>
-                                        <li>Druids <strong>cannot</strong> use priest scrolls unless specifically allowed for druids (PHB p. 52)</li>
-                                        <li>Paladins <strong>cannot</strong> cast spells from clerical or druidical scrolls (PHB p. 39 / DMG p. 196)</li>
-                                        <li>Rangers <strong>cannot</strong> use priest scrolls (PHB p. 39 / DMG p. 196)</li>
+                                        <li>can use (read and cast from) wizard spell scrolls (PHB p. 42 / DMG p. 196)</li>
+                                        <li>can use spells from scrolls outside their schools (Sage Advice #152 p. 14, Sage Advice #217 p. 84)</li>
+                                        <li>can use spells from scrolls that are higher level than the wizard's Intelligence normally allows (Sage Advice #219. p. 81)</li>
+                                        <li>can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)</li>
                                     </ul>
                                 </li>
+                                <li><strong>Priests</strong>
+                                    <ul>
+                                        <li>can use (read and cast from) priest spell scrolls (PHB p. 48 / DMG p. 196)
+                                        <li>can use spells from scrolls outside their spheres (Sage Advice #152 p. 14, Sage Advice #217 p. 84)</li>
+                                        <li>can use spells from scrolls that are higher level than the priest's Wisdom normally allows (Sage Advice #219. p. 81)</li>
+                                        <li>can use spells from scrolls without <strong><em>any</em></strong> restrictions (Sage Advice #219. p. 81)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Thieves</strong> can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 57)</li>
+                                <li><strong>Bards</strong> can use (read and cast from) wizard and priest spell scrolls at 10th level (PHB p. 61)</li>
+                                <li><strong>Druids cannot</strong> use priest scrolls unless specifically allowed for druids (PHB p. 52)</li>
+                                <li><strong>Paladins cannot</strong> cast spells from clerical or druidical scrolls (PHB p. 39 / DMG p. 196)</li>
+                                <li><strong>Rangers cannot</strong> use priest scrolls (PHB p. 39 / DMG p. 196)</li>
+                            </ul>
+                            <strong>Scroll specific spellcasting information</strong>
+                            <ul>
                                 <li>Scrolls have a read time equal to the inscribed spell's cast time (PHB p. 125 / DMG p. 196)</li>
+                                <li>Scrolls are used up and lost if they are disrupted during casting (Sage Advice #157 p. 25)</li>
+                                <li>Scrolls always has a casting level (for determining level-based variables such as range, damage, duration, and resistance to dispel attempts) of one level higher than the minimum required to cast it, but never less than 6th level. In other words, the act of writing a scroll limits its power (DMG p. 196 + Sage Advice #248 p. 20+22)</li>
                                 <li>Scrolls are cast at the level at which they were inscribed (DMG p. 196)</li>
                                 <li>Scrolls require no material components to cast (PHB p. 144 / DMG p. 118)</li>
                                 <li>No adverse effects associated with casting the spell are suffered by the reader. These requirements or penalties have already been fulfilled or suffered by the creator of the scroll (DMG p. 196)</li>
-                                <li><strong>Scroll Spell Failure</strong>
-                                    <ul>
-                                        <li>Wizards and Priests casting scrolls containing spells of a level too high for the character to cast incurs a 5% failure rate per level between the character's present level and the level at which the spell could be cast (DMG p. 196)<br>
-                                            Wizards and Priests scroll spell failure is either Total Failure (nothing happens) or Reverse / Harmful Failure effect (DMG p. 196)
-                                        </li>
-                                        <li>Thieves casting scrolls have 25% failure chance. Failure is always a reverse of the effect (PHB p. 58)</li>
-                                        <li>Bards casting scrolls have 15% failure chance. Failure is always a reverse of the effect (PHB p. 61)</li>
-                                        <li>Dual/Multi-class thieves/mages uses the best failure chance. Failure follows the rules of the class the chance belongs to (Sage Advice #260 p. 23)</li>
-                                    </ul>
-                                </li>
                             </ul>
                         </details>
+                        <details>
+                            <summary>Scroll Spell Failure</summary>
+                            <strong>Wizards and Priests</strong>
+                            <ul>
+                                <li>Casting scrolls containing spells of a level too high for the character to cast incurs a 5% failure rate per level between the character's present level and the level at which the spell could be cast (DMG p. 196)
+                                    <ul>
+                                        <li>If the DM allow characters to control the casting level of scrolls they scribe, the failure chance should be 5% between the character's present level and the scrolls casting level. (Sage Advice #248 p. 20+22)</li>
+                                    </ul>
+                                </li>
+                                <li>Scroll spell failure is either Total Failure (nothing happens) or Reverse / Harmful Failure effect (DMG p. 196)</li>
+                            </ul>
+                            <strong>Rogues</strong>
+                            <ul>
+                                <li><strong>Thieves</strong> casting scrolls have 25% failure chance. Failure is always a reverse of the effect (PHB p. 58)</li>
+                                <li><strong>Bards</strong> casting scrolls have 15% failure chance. Failure is always a reverse of the effect (PHB p. 61)</li>
+                            </ul>
+                            <strong>Dual/Multi-class Spellcaster/Rogue</strong>
+                            <ul>
+                                <li>Uses the best failure chance of the two classes. (Sage Advice #260 p. 23)
+                                    <ul>
+                                        <li>The DM can allow the player to choose what class is trying to use the scroll. (Sage Advice #260 p. 23)</li>
+                                    </ul>
+                                </li>
+                                <li>Failure follows the rules of the class the chance belongs to. Rogues always have a harmful effect while spellcasters can have a Total Failure with no catastrophic effects. (Sage Advice #260 p. 23)</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Scribing Scrolls</summary>
+                            <strong>Wizards</strong>
+                            <ul>
+                                <li>Gain the potential to scribe scrolls at 9th level (PHB p. 43 / DMG p. 117)</li>
+                                <li>Must have their spell book at hand to guide their work (DMG p. 119)</li>
+                            </ul>
+                            <strong>Priests</strong>
+                            <ul>
+                                <li>Gain the potential to scribe scrolls at 7th level (DMG p. 117)</li>
+                                <li>Must work on a specially prepared altar (DMG p. 119)</li>
+                            </ul>
+                            <p>The spellcaster knows the basics of the art and has learned where to look for the information he needs to make the attempt. The exact process for each spell is still a mystery to him. He may consult a sage, seek the guidance of a higher level spellcaster, or even use spells to call upon greater powers. (DMG p.117-119)</p>
+                            <strong>Scribing level</strong>
+                            <ul>
+                                <li>Scrolls always has a casting level (for determining level-based variables such as range, damage, duration, and resistance to dispel attempts) of one level higher than the minimum required to cast it, but never less than 6th level. In other words, the act of writing a scroll limits its power. (DMG p. 196)</li>
+                                <li>The DM can allow characters to control the casting level of scrolls they scribe, so long as it is not less than the minimum level required to cast the spell. (Sage Advice #248 p. 20+22)</li>
+                            </ul>
+                        </details>
+                        <label>Scroll Spell Failure System</label>
+                        <select name="attr_scroll-failure-system" class="sheet-display-min" title="@{scroll-failure-system}">
+                            <option value="disabled">Disabled</option>
+                            <option value="custom" selected>Custom</option>
+                            <option value="">--- Single class ---</option>
+                            <option value="spell-level">Caster: 5% based on spell level (Standard)</option>
+                            <option value="casting-level">Caster: 5% based on casting level (Optional)</option>
+                            <option value="thief">Thief: 25% (Standard)</option>
+                            <option value="bard">Bard: 15% (Standard)</option>
+                            <option value="">--- Dual/Multi-class ---</option>,
+                            <option value="spell-level_thief_best">Caster/Thief: 5% based on spell level or 25%. Use the best failure chance (Standard)</option>
+                            <option value="spell-level_thief_select">Caster/Thief: 5% based on spell level or 25%. Select class to use (Optional)</option>
+                            <option value="casting-level_thief_best">Caster/Thief: 5% based on casting level or 25%. Use the best failure chance (Optional)</option>
+                            <option value="casting-level_thief_select">Caster/Thief: 5% based on casting level or 25%. Select class to use (Optional)</option>
+                            <option value="spell-level_bard_best">Caster/Bard: 5% based on spell level or 15%. Use the best failure chance (Standard)</option>
+                            <option value="spell-level_bard_select">Caster/Bard: 5% based on spell level or 15%. Select class to use (Optional)</option>
+                            <option value="casting-level_bard_best">Caster/Bard: 5% based on casting level or 15%. Use the best failure chance (Optional)</option>
+                            <option value="casting-level_bard_select">Caster/Bard: 5% based on casting level or 15%. Select class to use (Optional)</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -14660,7 +14772,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_henchparsave" title="%{henchparsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchpartar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_henchparsave" title="%{henchpoisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchpoitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_henchpoisave" title="%{henchpoisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchpoitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_henchdeasave" title="%{henchdeasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchdeatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_henchrodsave" title="%{henchrodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchrodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_henchstasave" title="%{henchstasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{henchstatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -14877,7 +14989,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench1parsave" title="%{repeating_hench_$X_hench1parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench1parsave" title="%{repeating_hench_$X_hench1poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench1poisave" title="%{repeating_hench_$X_hench1poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench1deasave" title="%{repeating_hench_$X_hench1deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench1rodsave" title="%{repeating_hench_$X_hench1rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench1stasave" title="%{repeating_hench_$X_hench1stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname1}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench1statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -15081,7 +15193,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_hench2parsave" title="%{hench2parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_hench2parsave" title="%{hench2poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_hench2poisave" title="%{hench2poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_hench2deasave" title="%{hench2deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_hench2rodsave" title="%{hench2rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_hench2stasave" title="%{hench2stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname2}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench2statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -15439,7 +15551,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench22parsave" title="%{repeating_hench2_$X_hench22parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench22parsave" title="%{repeating_hench2_$X_hench22poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench22poisave" title="%{repeating_hench2_$X_hench22poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench22deasave" title="%{repeating_hench2_$X_hench22deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench22rodsave" title="%{repeating_hench2_$X_hench22rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench22stasave" title="%{repeating_hench2_$X_hench22stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname22}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench22statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -15802,7 +15914,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_hench3parsave" title="%{hench3parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_hench3parsave" title="%{hench3poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_hench3poisave" title="%{hench3poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_hench3deasave" title="%{hench3deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_hench3rodsave" title="%{hench3rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_hench3stasave" title="%{hench3stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname3}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench3statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -16160,7 +16272,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench33parsave" title="%{repeating_hench3_$X_hench33parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench33parsave" title="%{repeating_hench3_$X_hench33poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench33poisave" title="%{repeating_hench3_$X_hench33poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench33deasave" title="%{repeating_hench3_$X_hench33deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench33rodsave" title="%{repeating_hench3_$X_hench33rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench33stasave" title="%{repeating_hench3_$X_hench33stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname33}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench33statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -16523,7 +16635,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_hench4parsave" title="%{hench4parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_hench4parsave" title="%{hench4poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_hench4poisave" title="%{hench4poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_hench4deasave" title="%{hench4deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_hench4rodsave" title="%{hench4rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_hench4stasave" title="%{hench4stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname4}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench4statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -16960,7 +17072,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench44parsave" title="%{repeating_hench4_$X_hench44parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench44parsave" title="%{repeating_hench4_$X_hench44poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench44poisave" title="%{repeating_hench4_$X_hench44poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench44deasave" title="%{repeating_hench4_$X_hench44deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench44rodsave" title="%{repeating_hench4_$X_hench44rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench44stasave" title="%{repeating_hench4_$X_hench44stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname44}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench44statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -17402,7 +17514,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_hench5parsave" title="%{hench5parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_hench5parsave" title="%{hench5poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_hench5poisave" title="%{hench5poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_hench5deasave" title="%{hench5deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_hench5rodsave" title="%{hench5rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_hench5stasave" title="%{hench5stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname5}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench5statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -18760,7 +18872,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench55parsave" title="%{repeating_hench5_$X_hench55parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench55parsave" title="%{repeating_hench5_$X_hench55poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench55poisave" title="%{repeating_hench5_$X_hench55poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench55deasave" title="%{repeating_hench5_$X_hench55deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench55rodsave" title="%{repeating_hench5_$X_hench55rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench55stasave" title="%{repeating_hench5_$X_hench55stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname55}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench55statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -20100,7 +20212,7 @@
                 <table class="sheet-centering" style="width: 100%;">
                     <tr>
                         <td><button type="roll" name="roll_hench6parsave" title="%{hench6parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                        <td><button type="roll" name="roll_hench6parsave" title="%{hench6poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                        <td><button type="roll" name="roll_hench6poisave" title="%{hench6poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                         <td><button type="roll" name="roll_hench6deasave" title="%{hench6deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                         <td><button type="roll" name="roll_hench6rodsave" title="%{hench6rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                         <td><button type="roll" name="roll_hench6stasave" title="%{hench6stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname6}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench6statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -20676,7 +20788,7 @@
                     <table class="sheet-centering" style="width: 100%;">
                         <tr>
                             <td><button type="roll" name="roll_hench66parsave" title="%{repeating_hench6_$X_hench66parsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66partar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                            <td><button type="roll" name="roll_hench66parsave" title="%{repeating_hench6_$X_hench66poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                            <td><button type="roll" name="roll_hench66poisave" title="%{repeating_hench6_$X_hench66poisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66poitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                             <td><button type="roll" name="roll_hench66deasave" title="%{repeating_hench6_$X_hench66deasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66deatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                             <td><button type="roll" name="roll_hench66rodsave" title="%{repeating_hench6_$X_hench66rodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66rodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                             <td><button type="roll" name="roll_hench66stasave" title="%{repeating_hench6_$X_hench66stasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{henchname66}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{hench66statar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -21353,6 +21465,9 @@
                 <td><input type="text" name="attr_monsterini" title="@{monsterini}" class="sheet-short"></td>
                 <td><button type="roll" name="roll_monini" title="%{monini}" value="/gmroll [[{1d10cs1cf10+(@{monsterini} [Speed])-(@{misc-mod}), {1}}kh1]] [Initiative (@{character_name})]&{tracker}">Initiative</button></td>
             </tr>
+            <tr>
+                <td colspan="2"><button type="action" name="act_grenade-miss" class="btn sheet-action-button-roll">Grenade-like miss!</button></td>
+            </tr>
         </table>
         <br>
 
@@ -21745,7 +21860,7 @@
         <table class="sheet-centering" style="width: 100%;">
             <tr>
                 <td><button type="roll" name="roll_monparsave" title="%{monparsave}" value="/w gm &{template:2Esave} {{savevs=Paralyzation}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{monpartar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Para<br>Save</button></td>
-                <td><button type="roll" name="roll_monparsave" title="%{monpoisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{monpoitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
+                <td><button type="roll" name="roll_monpoisave" title="%{monpoisave}" value="/w gm &{template:2Esave} {{savevs=Poison}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{monpoitar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Poison<br>Save</button></td>
                 <td><button type="roll" name="roll_mondeasave" title="%{mondeasave}" value="/w gm &{template:2Esave} {{savevs=Death}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{mondeatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Death<br>Save</button></td>
                 <td><button type="roll" name="roll_monrodsave" title="%{monrodsave}" value="/w gm &{template:2Esave} {{savevs=Rod}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{monrodtar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Rod<br>Save</button></td>
                 <td><button type="roll" name="roll_monstasave" title="%{monstasave}" value="/w gm &{template:2Esave} {{savevs=Staff}} {{character=@{character_name}}} {{success= You made your check by [[ abs([[1d20+(@{misc-mod})]] - [[@{monstatar}]]) ]]}} {{fail=You missed your check by $[[2]]}} {{fumble=You missed your check against all odds}} {{saveroll=$[[0]]}} {{savetarget=$[[1]]}}"><br>Staff<br>Save</button></td>
@@ -21795,11 +21910,29 @@
     <br>
     <br>
 
-    <button type="action" name="act_secret-door-check" class="btn sheet-action-button-roll">Search for Secret door</button>
+    <button type="action" name="act_secret-door-check" class="btn sheet-action-button-roll">Active search for Concealed/Secret door</button>
     <br>
     <button type="roll" name="roll_concealed-door-check" value="/w gm &{template:2Echeck} {{checkvs=Elf/Half-Elf passive Concealed door check}}{{character=Elven character}}{{checkroll=[[1d6cs1cf6]] }}{{checktarget=[[3]]}} {{success=The elven character notices the concealed door}} {{fail=The elven character notices nothing.}}">Elf/Half-Elf passing within 10 feet of a Concealed door</button>
+    <details>
+        <summary>Notes for finding Concealed/Secret doors</summary>
+        <strong>Concealed doors</strong>
+        <ul>
+            <li><strong>All characters</strong> automatically find a <em>concealed door</em> when actively searching for it. (DMG p. 176)</li>
+            <li><strong>Elves</strong> and <strong>Half-elves</strong> have a 3 in 6 chance of finding a <em>concealed door</em> when merely passing with in 10 feet of it.
+                <ul>
+                    <li>This is a departure from the PHB p. 29-31. Since the DMG states that all character automatically finds a <em>concealed door</em> when actively searching, the Elf and Half-elf 3 in 6 of actively finding a <em>concealed door</em> has been moved from the active search to passive.
+                        </li>
+                </ul>
+            </li>
+        </ul>
+        <strong>Secret doors</strong>
+        <ul>
+            <li><strong>Non-elven characters</strong> have a 1 in 6 chance of finding a <em>secret door</em> when actively searching for it. (Sage Advice #152 p. 14 + Sage Advice #273 p. 114)</li>
+            <li><strong>Elves</strong> and <strong>Half-elves</strong> have a 2 in 6 chance of finding a <em>secret door</em> when actively searching for it. (PHB p. 29-31)</li>
+        </ul>
+        <strong>DM information on doors is found in the DMG p. 176</strong>
+    </details>
 
-    <br>
     <br>
     <h4>Item Saving Throws</h4>
     <table class="sheet-default-header-first-row sheet-default-header-first-column sheet-centering sheet-centering-padding-2-row1 sheet-align-bottom-row1 sheet-left-column1 sheet-background-gray-pair3-header">
@@ -21978,7 +22111,7 @@
 </div>
 <div class="sheet-tab-content sheet-section-settings-page">
     <h2>General</h2>
-    <h4>Select books to include autofill information from:</h4>
+    <h3>Select books to include autofill information from:</h3>
     <table class="sheet-default-header-first-row sheet-padding-right-column1 sheet-centering-padding-5-column3 sheet-centering-padding-5-column4 sheet-background-gray-pair3">
         <tr>
             <th>Book</th>
@@ -22118,7 +22251,7 @@
         </tr>
     </table>
     <br>
-    <h4>Optional rules for spells</h4>
+    <h3>Optional rules for spells</h3>
     These optional rules can be activated independently of the content of the same book, selected above
     <table class="sheet-default-header-first-row sheet-padding-right-column1 sheet-centering-padding-5-column3 sheet-background-gray-pair3">
         <tr>
@@ -22153,7 +22286,7 @@
         </tr>
     </table>
     <br>
-    <h4>Spell tracking system</h4>
+    <h3>Spell tracking system</h3>
     AD&D 2E have different systems for tracking spells, three have been implemented:
     <ol>
         <li><strong>Spell Slots:</strong> The default system described in the <em>Player's Handbook</em></li>
@@ -22180,23 +22313,23 @@
     <br>
     <br>
     <h2>Character Sheet specific</h2>
-    <h4>Thieving skill roll visibility</h4>
+    <h3>Thieving skill roll visibility</h3>
     <p>The thieving skills are described to be rolled in different ways. Some skills such as Pick Pockets, or Climb Walls have no description and are assumed to be rolled by the player.
         Other skills such as Move Silently or Hide in Shadows are supposed to be rolled by the DM in secret.
         Here you can choose how visible the various skills should be, choosing from 3 options:
     </p>
     <ol>
         <li><strong>All rolls are visible to the player:</strong> All thieving skills can be seen by both the player who made the roll and the DM.</li>
-        <li><strong>Roll visibility is by the book:</strong> Some skills can be seen by both the player who made the roll and the DM, while others can only be seen by the DM.</li>
+        <li><strong>Roll visibility is by the book:</strong> Some skills can be seen by both the player who made the roll and the DM, while others can only be seen by the DM. <strong>Note:</strong> Custom thieving skills are shown to both the player and the DM.</li>
         <li><strong>All rolls hidden from the player:</strong> All thieving skills can only be seen by the DM. The player will have to reason what the result was based on the DM's description of events.</li>
     </ol>
-    <p><strong>Note:</strong> Custom thieving skills are shown to the player when visibility is by the book.</p>
     <label>How do you prefer the visibility of thieving skills?</label>
     <select name="attr_rogue-skill-visibility" title="@{rogue-skill-visibility}" class="sheet-nonweaponprof">
         <option value="player">All rolls are visible to the player</option>
         <option value="by-the-book">Roll visibility is by the book</option>
         <option value="dm">All rolls are hidden from the player</option>
     </select>
+    <br>
     <br>
     <h2>Monster Sheet specific</h2>
     <label>Should Attack and Spell rolls be public or only to GM?</label>
@@ -33561,29 +33694,50 @@
                 <tr>
                     <td class="sheet-grenade-c1 sheet-ignore-inlineroll">Direct Hit:<br>({{aoe}} Feet Diameter)</td>
                     {{#rollTotal() computed::hit 1}}
-                    <td class="sheet-template-result sheet-template-success sheet-ignore-inlineroll">Hit!<br><span class="sheet-hit-text">{{hitdmg}}</span></td>
+                    <td class="sheet-template-result sheet-template-success">Hit!<br><span class="sheet-hit-text">{{hitdmg}}</span></td>
                     {{/rollTotal() computed::hit 1}}
                     {{#rollTotal() computed::hit 0}}
-                    <td class="sheet-template-result sheet-template-failure sheet-ignore-inlineroll">Miss!<br><span class="sheet-miss-text">{{hitdmg}}</span></td>
+                    <td class="sheet-template-result sheet-template-failure">Miss!<br><span class="sheet-miss-text">{{hitdmg}}</span></td>
                     {{/rollTotal() computed::hit 0}}
                 </tr>
+                {{#splashdmg}}
                 <tr>
                     <td class="sheet-grenade-c1 sheet-ignore-inlineroll">Splash Hit:<br>({{aoesplash}} Feet Diameter)</td>
                     <!-- Direct hit is true -->
                     {{#rollTotal() computed::hit 1}}
-                    <td class="sheet-template-result sheet-template-info sheet-ignore-inlineroll sheet-hit-text">Info<br><span class="sheet-miss-text">{{splashdmg}}</span></td>
+                    <td class="sheet-template-result sheet-template-info">Info<br><span class="sheet-miss-text">{{splashdmg}}</span></td>
                     {{/rollTotal() computed::hit 1}}
 
                     <!-- Direct hit is false -->
                     {{#rollTotal() computed::hit 0}}
                         {{#rollTotal() computed::splash 1}}
-                        <td class="sheet-template-result sheet-template-success sheet-ignore-inlineroll">Hit!<br><span class="sheet-hit-text">{{splashdmg}}</span></td>
+                        <td class="sheet-template-result sheet-template-success">Hit!<br><span class="sheet-hit-text">{{splashdmg}}</span></td>
                         {{/rollTotal() computed::splash 1}}
                         {{#rollTotal() computed::splash 0}}
-                        <td class="sheet-template-result sheet-template-failure sheet-ignore-inlineroll">Miss!<br><span class="sheet-miss-text">{{splashdmg}}</span></td>
+                        <td class="sheet-template-result sheet-template-failure">Miss!<br><span class="sheet-miss-text">{{splashdmg}}</span></td>
                         {{/rollTotal() computed::splash 0}}
                     {{/rollTotal() computed::hit 0}}
                 </tr>
+                {{/splashdmg}}
+                {{#bounce}}
+                <tr>
+                    <td colspan="2" style="font-size: 9pt;">
+                        <p>
+                            The boulder bounces and rolls for {{bounce}} feet,
+                            {{#^rollBetween() direction 2 7}}following the original line of attack.{{/^rollBetween() direction 2 7}}
+                            {{#rollBetween() direction 2 7}}moving roughly 45 to 60 degrees off the original line of attack.{{/rollBetween() direction 2 7}}
+                        </p>
+                        <p>
+                            <strong>In an open area:</strong><br>
+                            For each character the boulder moves though, reroll to-hit with a -2 penalty for each 10 feet, or fraction thereof, the boulder has bounced since it hit.
+                        </p>
+                        <p>
+                            <strong>In an area where movement is restricted</strong>—a formation of pikemen or a large party in a 10-foot wide corridor:<br>
+                            The boulder strikes all targets in its path.
+                        </p>
+                    </td>
+                </tr>
+                {{/bounce}}
             </table>
         </div>
     </div>
@@ -52168,8 +52322,8 @@ wiz2['Ice Knife'] = {
     'materials': 'A drop of water from melted snow and a tiny silver dagger.',
     'reference': 'p. 98',
     'book': 'The Complete Wizard\'s Handbook',
-    'damage': '*Hit:* 2d4 damage\n*Shatter:* 1d4 cold damage and numb for 1d3 rounds',
-    'damage-type': '',
+    'damage': 'All affected creatures are numb for 1d3 rounds\n*Hit:* 2d4 Cold\n*Shatter:* 1d4',
+    'damage-type': 'Cold',
     'healing': '',
     'effect': 'This spell fires a dagger of ice at the target. The caster makes a normal attack roll as if attacking with a missile weapon, factoring in the range from the attacker to the target (the *ice knife* has a long range of 30 yards, a medium range of 20 yards, and a short range of 10 yards). A successful hit causes 2-8 (2d4) hit points of damage. If the *ice knife* misses its target, consult the rules for grenade-like missiles on pages 88-89 of the *Dungeon Master’s Guide* to determine where it lands.\n&emsp;When an *ice knife* strikes a solid object or a creature, the knife shatters, releasing a wave of numbing cold. All creatures within a 5-foot radius must make a successful saving throw vs. paralyzation or suffer 1-4 hit points of cold damage and become numb for 1-3 rounds. Numbed creatures have their movement rates reduced by half and their chance to hit reduced by 2. Proximity to major sources of heat, such as a roaring bonfire, improves a creature’s saving throw by +2.\n&emsp;An *ice knife* that misses or is lost cannot be picked up by the caster (or anyone else) and thrown again. If the *ice knife* is touched, it instantly shatters, releasing a wave of cold as described above. If a lost *ice knife* is not touched, it melts away in a pool of water 1 round after it was originally created; this melting occurs regardless of the environmental temperature.'
 };
@@ -70341,6 +70495,30 @@ const THAC0_FORMULAS = {
     'psionicist': l => 21-Math.ceil(l/2),
 }
 
+const SPELL_LEVEL_REQUIREMENT = {
+    'Wizard': {
+        '1': 1,
+        '2': 3,
+        '3': 5,
+        '4': 7,
+        '5': 9,
+        '6': 12,
+        '7': 14,
+        '8': 16,
+        '9': 18,
+    },
+    'Priest': {
+        '1': 1,
+        '2': 3,
+        '3': 5,
+        '4': 7,
+        '5': 9,
+        '6': 11,
+        '7': 14,
+        'q': 10,
+    }
+}
+
 const SCHOOL_SPELLS_AND_MAGIC = 'school-spells-and-magic';
 const SCHOOL_FIELDS = [SCHOOL_SPELLS_AND_MAGIC];
 
@@ -72014,7 +72192,7 @@ on('clicked:repeating_customrogue:cr-dm', function (eventInfo) {
         let rollBuilder = new RollTemplateBuilder('2Edefault');
         rollBuilder.push('subtitle=for @{character_name}', 'color=dark-purple');
         rollBuilder.push(`name=@{${values.character_name}|${row}_customskill}\n(in @{armorname})`);
-        rollBuilder.push(`[Secret by DM](~${values.character_name}|${row}_cr)=`);
+        rollBuilder.push(`[Secret by DM](~@{character_name}|${row}_cr)=`);
         rollBuilder.push(`desc=You try to use @{${values.character_name}|${row}_customskill}...`);
         console.log(rollBuilder.string());
 
@@ -72380,55 +72558,222 @@ on('change:repeating_monsterweapons:weaponname', function(eventInfo) {
 });
 //#endregion
 
-on('clicked:grenade-miss', async function (eventInfo) {
-    getAttrs(['character_name'], async function(values) {
-        let characterName = values['character_name'];
+on('clicked:grenade-miss', function(eventInfo) {
+    getAttrs(['tab11'], async function(values) {
+        let templateVisibility = '';
+        let rollVisibility = '/em';
+        if (values['tab11'] === '2') {
+            templateVisibility = '@{wtype}';
+            rollVisibility = '@{wtype}';
+        }
+
         let rollBuilder = new RollTemplateBuilder('2Egrenademiss');
-        let grenade = await extractQueryResult('?{What grenade have been thrown?|Acid|Holy water|Oil (lit)|Poison|Other}');
+        const query = '?{What grenade have been thrown?'.concat(
+            '|Acid',
+            '|Holy water',
+            '|Oil (lit)',
+            '|Poison',
+            '|Boulder',
+            '|--------',
+            '|Fire Seed missile',
+            '|Ice Knife',
+            '|Melf’s Minute Meteor',
+            '|Otiluke’s Freezing Sphere - Globe of cold',
+            '|Produce Flame',
+            '|Puffball',
+            '|Sol’s Searing Orb',
+            '|Other',
+            '}'
+        );
+        let grenade = await extractQueryResult(query);
         switch (grenade) {
-            case 'Acid':       rollBuilder.push('name=Acid','aoe=[[1]]','aoesplash=[[1+6]]',`hitdmg=[Damage](~${characterName}|acid-hit)`,`splashdmg=[Damage](~${characterName}|acid-splash)`); break;
-            case 'Holy water': rollBuilder.push('name=Holy water','aoe=[[1]]','aoesplash=[[1+6]]',`hitdmg=[Damage](~${characterName}|holy-water-hit)`,`splashdmg=[Damage](~${characterName}|holy-water-splash)`); break;
-            case 'Oil (lit)':  rollBuilder.push('name=Oil (lit)','aoe=[[3]]','aoesplash=[[3+6]]',`hitdmg=[Round 1](~${characterName}|oil-lit-hit1) [Round 2](~${characterName}|oil-lit-hit2)`,`splashdmg=[Damage](~${characterName}|oil-lit-splash)`); break;
-            case 'Poison':     rollBuilder.push('name=Poison','aoe=[[1]]','aoesplash=[[1+6]]','hitdmg=Special','splashdmg=Special'); break;
+            case 'Acid': {
+                rollBuilder.push(
+                    'name=Acid',
+                    'aoe=[[1]]',
+                    'aoesplash=[[1+6]]',
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;2d4&rbrack;&rbrack; acid damage using their Acid! &#40;Direct Hit&#41;)`,
+                    `splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1&rbrack;&rbrack; acid damage using their Acid! &#40;Splash&#41;)`
+                );
+                break;
+            }
+            case 'Holy water': {
+                rollBuilder.push(
+                    'name=Holy water',
+                    'aoe=[[1]]',
+                    'aoesplash=[[1+6]]',
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1d6+1&rbrack;&rbrack; damage using their Holy water! &#40;Direct Hit&#41;)`,
+                    `splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;2&rbrack;&rbrack; damage using their Holy water! &#40;Splash&#41;)`
+                );
+                break;
+            }
+            case 'Oil (lit)': {
+                rollBuilder.push(
+                    'name=Oil (lit)',
+                    'aoe=[[3]]',
+                    'aoesplash=[[3+6]]',
+                    `hitdmg=[Round 1](\`${rollVisibility} rolls &lbrack;&lbrack;2d6&rbrack;&rbrack; fire damage using their Oil &#40;lit&#41;! &#40;Direct Hit, first round&#41;) [Round 2]({rollVisibility}\`$ rolls &lbrack;&lbrack;1d6&rbrack;&rbrack; fire damage using their Oil &#40;lit&#41;! &#40;Direct Hit, second round&#41;)`,
+                    `splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1d3&rbrack;&rbrack; fire damage using their Oil &#40;lit&#41;! &#40;Splash&#41;)`
+                );
+                break;
+            }
+            case 'Poison': {
+                rollBuilder.push(
+                    'name=Poison',
+                    'aoe=[[1]]',
+                    'aoesplash=[[1+6]]',
+                    `hitdmg=[Special](\`${rollVisibility} affects the target creature with Poison! Consult DMG p. 101 for the effect. &#40;Direct Hit&#41;)`,
+                    `splashdmg=[Special](\`${rollVisibility} affects the target creature with Poison! Consult DMG p. 101 for the effect. &#40;Splash&#41;)`
+                );
+                break;
+            }
+            case 'Boulder': {
+                let damage = await extractQueryResult('?{Direct Hit damage|3d10}');
+                rollBuilder.push(
+                    'name=Boulder',
+                    'aoe=[[2]]',
+                    'aoesplash=[[2]]',
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;${damage}&rbrack;&rbrack; damage using their Boulder! &#40;Direct Hit&#41;)`,
+                    `splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;${damage}&rbrack;&rbrack; damage, minus the distance the boulder has bounced in feet since it first hit the ground, using their Boulder! &#40;Scatter&#41;)`,
+                    'bounce=[[3d10]]'
+                );
+                break;
+            }
+            case '--------': return;
+            case 'Fire Seed missile': {
+                rollBuilder.push(
+                    'name=Fire Seed missile',
+                    'aoe=[[10]]',
+                    'aoesplash=',
+                    `hitdmg=[Damage](\`${rollVisibility} causes creatures failing a save vs. spell &lbrack;&lbrack;2d8&rbrack;&rbrack; fire damage &#40;one-half damage if a saving throw vs. spell is successful&#41; using their Fire Seed missile! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break
+            }
+            case 'Ice Knife': {
+                rollBuilder.push(
+                    'name=Ice Knife',
+                    'aoe=[[10]]',
+                    'aoesplash=',
+                    `hitdmg=[Damage](\`${rollVisibility} causes creatures failing a save vs. paralyzation to suffer &lbrack;&lbrack;1d4&rbrack;&rbrack; cold damage and &lbrack;&lbrack;1d3&rbrack;&rbrack; rounds of numbness using their Ice Knife! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break;
+            }
+            case 'Melf’s Minute Meteor': {
+                rollBuilder.push(
+                    'name=Melf’s Minute Meteor',
+                    'aoe=[[1]]',
+                    'aoesplash=[[6]]',
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1d4&rbrack;&rbrack; fire damage using their Melf’s Minute Meteor! &#40;Direct Hit&#41;)`,
+                    `splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1&rbrack;&rbrack; fire damage using their Melf’s Minute Meteor! &#40;Splash&#41;)`
+                );
+                break;
+            }
+            case 'Otiluke’s Freezing Sphere - Globe of cold': {
+                rollBuilder.push(
+                    'name=Otiluke’s Freezing Sphere (Globe of cold)',
+                    'aoe=[[20]]',
+                    'aoesplash=',
+                    `hitdmg=[Damage](\`${rollVisibility} causes creatures failing a save vs. spell &lbrack;&lbrack;6d6&rbrack;&rbrack; cold damage &#40;one-half damage if a saving throw vs. spell is successful&#41; using their Otiluke’s Freezing Sphere - Globe of cold! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break;
+            }
+            case 'Produce Flame': {
+                rollBuilder.push(
+                    'name=Produce Flame',
+                    'aoe=[[3]]',
+                    'aoesplash=',
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;1d4+1&rbrack;&rbrack; fire damage using their Produce Flame! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break;
+            }
+            case 'Puffball': {
+                rollBuilder.push(
+                    'name=Puffball',
+                    'aoe=[[10]]',
+                    'aoesplash=',
+                    `hitdmg=[Effect](\`${rollVisibility} causes creatures failing a save vs. poison to be unable to attack and lose all Dexterity bonuses to Armor Class and saving throws using their Puffball! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break;
+            }
+            case 'Sol’s Searing Orb': {
+                rollBuilder.push(
+                    'name=Sol’s Searing Orb',
+                    'aoe=[[6]]',
+                    'aoesplash=',
+                    `hitdmg=[Damage](\`${rollVisibility} causes normal creatures failing a saving throw vs. spell &lbrack;&lbrack;3d6&rbrack;&rbrack; fire damage and &lbrack;&lbrack;1d3&rbrack;&rbrack; rounds of blindness. Or causes undead &lbrack;&lbrack;6d6&rbrack;&rbrack; fire damage and &lbrack;&lbrack;1d6&rbrack;&rbrack; rounds of blindness. All victims are allowed a saving throw vs. spell, with success indicating half damage and no blindness. Using their Sol’s Searing Orb! &#40;Direct Hit&#41;)`,
+                    'splashdmg='
+                );
+                break;
+            }
             case 'Other': {
-                let name   = await extractQueryResult('?{Grenade name}');
-                let aoe    = await extractQueryResult('?{Area of effect (Diameter in feet)|1}');
-                let damage = await extractQueryResult('?{Direct damage|1d6}');
+                let name = await extractQueryResult('?{Grenade name}');
+                let aoe = await extractQueryResult('?{Area of effect (Diameter in feet)|1}');
+                let damage = await extractQueryResult('?{Direct Hit damage|1d6}');
                 let splash = await extractQueryResult('?{Splash damage|1d3}');
+                splash = splash.trim();
 
-                let customGrenade = {}
-                customGrenade['custom-grenade-name'] = name;
-                customGrenade['custom-grenade-hit'] = damage;
-                customGrenade['custom-grenade-splash'] = splash;
-                setAttrs(customGrenade);
+                let escapedName = name.replaceAll('(','&#40;')
+                    .replaceAll(')','&#41;')
+                    .replaceAll('[','&lbrack;')
+                    .replaceAll(']','&rbrack;');
 
-                rollBuilder.push(`name=${name}`,`aoe=[[${aoe}]]`,`aoesplash=[[${aoe}+6]]`,`hitdmg=[Damage](~${characterName}|custom-grenade-hit)`,`splashdmg=[Damage](~${characterName}|custom-grenade-splash)`);
+                rollBuilder.push(
+                    `name=${name}`,
+                    `aoe=[[${aoe}]]`,
+                    `aoesplash=[[${aoe}+6]]`,
+                    `hitdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;${damage}&rbrack;&rbrack; damage using their ${escapedName}! &#40;Direct Hit&#41;)`,
+                );
+
+                if (splash === '' || splash === '0') {
+                    rollBuilder.push('splashdmg=');
+                } else {
+                    rollBuilder.push(`splashdmg=[Damage](\`${rollVisibility} rolls &lbrack;&lbrack;${splash}&rbrack;&rbrack; damage using their ${escapedName}! &#40;Splash&#41;)`);
+                }
             }
         }
-        let distanceName = await extractQueryResult('?{How far was it thrown?|Short|Medium|Long}');
-        rollBuilder.push('direction=[[1d10]]', `distancename=${distanceName}`);
-        switch (distanceName) {
-            case 'Short': rollBuilder.push('distance=[[1d6cs1cf6]]'); break;
-            case 'Medium': rollBuilder.push('distance=[[1d10cs1cf10]]'); break;
-            case 'Long': rollBuilder.push('distance=[[2d10cs1cf10]]'); break;
+
+        let distanceName;
+        switch (grenade) {
+            case 'Fire Seed missile':
+            case 'Melf’s Minute Meteor':
+            case 'Produce Flame':
+            case 'Sol’s Searing Orb':
+                distanceName = 'Short';
+                break;
+            default:
+                distanceName = await extractQueryResult('?{How far was it thrown?|Short|Medium|Long}');
         }
+        rollBuilder.push('direction=[[1d10]]', `distancename=${distanceName}`);
+        let distanceRoll;
+        switch (distanceName) {
+            case 'Short':  distanceRoll='1d6cs1cf6'; break;
+            case 'Medium': distanceRoll='1d10cs1cf10'; break;
+            case 'Long':   distanceRoll='2d10cs1cf10'; break;
+        }
+        if (grenade === 'Boulder') {
+            distanceRoll = distanceRoll + '*2';
+        }
+        rollBuilder.push(`distance=[[${distanceRoll}]]`);
         rollBuilder.push('hit=[[0]]','splash=[[0]]');
-        let finalRollText = rollBuilder.string();
+        let finalRollText = `${templateVisibility} ${rollBuilder.string()}`;
         console.log(finalRollText);
         startRoll(finalRollText, function (roll) {
-            console.log(roll);
             let computedRolls = {
                 hit: 0,
                 splash: 0
             };
 
             // See if monster is within direct hit
-            if (roll.results.distance.result <= roll.results.aoe.result / 2) {
+            if (roll.results.aoe && roll.results.distance.result <= roll.results.aoe.result / 2) {
                 computedRolls.hit = 1;
-            } else if (roll.results.distance.result <= roll.results.aoesplash.result / 2) {
+            } else if (roll.results.aoesplash && roll.results.distance.result <= roll.results.aoesplash.result / 2) {
                 computedRolls.splash = 1;
             }
-            console.log(computedRolls);
             finishRoll(roll.rollId, computedRolls);
         });
     });
@@ -73199,43 +73544,278 @@ on('change:repeating_gear-stored:gear-stored-weight change:repeating_gear-stored
             a.D[2]['stored-gear-weight-total']=(m.allgearweight-m.mountgearweight);
         })
         .execute();
-})
+});
 
-on('change:repeating_scrolls:scroll', async function (eventInfo) {
-    if (!eventInfo.newValue)
-        return;
+//#region Scroll
+const getScrollSpells = function (scrollName) {
+    if (!scrollName)
+        return null;
 
-    let spellName = eventInfo.newValue.replace(/ scroll$/, '');
+    let spellName = scrollName.replace(/ scroll$/, '');
     let wizardSpell = wizardSpells['wizmonster'][spellName];
     let priestSpell = priestSpells['primonster'][spellName];
     if (!wizardSpell && !priestSpell)
-        return
+        return null;
 
-    let spell;
-    let spellClass;
-    if (wizardSpell && priestSpell) {
-        spellClass = await extractQueryResult(`?{Is ${eventInfo.newValue} a Wizard or Priest scroll?|Wizard|Priest}`);
-        spell = spellClass === 'Wizard' ? wizardSpell : priestSpell;
-    } else if (wizardSpell) {
-        spell = wizardSpell;
-        spellClass = 'Wizard';
-    } else {
-        spell = priestSpell;
-        spellClass = 'Priest';
+    return {wizardSpell, priestSpell}
+}
+
+const getScrollCasterClassAndLevel = async function (spLevelMatch, scrollName, scrollSpells) {
+    if (spLevelMatch) {
+        if (spLevelMatch[1].match(/wizard/i)) {
+            return {
+                casterClass: 'Wizard',
+                casterLevel: '@{level-class2}',
+            }
+        }
+        if (spLevelMatch[1].match(/priest/i)) {
+            return {
+                casterClass: 'Priest',
+                casterLevel: '@{level-class3}',
+            }
+        }
     }
 
-    getAttrs([...BOOK_FIELDS, ...SCHOOL_FIELDS, ...SPHERE_FIELDS], async function(books) {
-        if (bookInactiveShowToast(books, spell))
+    if (!scrollSpells) {
+        return null
+    }
+
+    let {wizardSpell, priestSpell} = scrollSpells;
+    if (wizardSpell && priestSpell) {
+        let casterClass = await extractQueryResult(`?{Is '${scrollName}' a Wizard or Priest scroll?|Wizard|Priest}`);
+        return {
+            casterClass: casterClass,
+            casterLevel: casterClass === 'Wizard' ? '@{level-class2}' : '@{level-class3}',
+        }
+    }
+    if (wizardSpell) {
+        return {
+            casterClass: 'Wizard',
+            casterLevel: '@{level-class2}',
+        }
+    }
+    if (priestSpell) {
+        return {
+            casterClass: 'Priest',
+            casterLevel: '@{level-class3}',
+        }
+    }
+
+    return null
+}
+
+const getScrollSpellLevelRequirement = function (spLevelMatch, scrollSpells, casterClass) {
+    if (spLevelMatch) {
+        let spellLevelMatch = spLevelMatch[1].match(/\d+/);
+        if (spellLevelMatch) {
+            let spellLevel = spellLevelMatch[0];
+            if (spellLevel.match(/^[1-7]$/)) { // Handle spells in the normal range for both classes
+                return SPELL_LEVEL_REQUIREMENT[casterClass][spellLevel];
+            }
+            if (spellLevel.match(/^[8-9]$/) && casterClass === 'Wizard') { // Handle high level wizard spells
+                return SPELL_LEVEL_REQUIREMENT[casterClass][spellLevel];
+            }
+        }
+
+        if (spLevelMatch[1].match(/quest/i) && casterClass === 'Priest') { // Handle quest spells
+            return SPELL_LEVEL_REQUIREMENT[casterClass]['q'];
+        }
+    }
+
+    if (!scrollSpells) {
+        return null
+    }
+
+    let {wizardSpell, priestSpell} = scrollSpells;
+    if (wizardSpell && priestSpell) {
+        let spellLevel = casterClass === 'Wizard' ? wizardSpell.level : priestSpell.level;
+        return SPELL_LEVEL_REQUIREMENT[casterClass][spellLevel];
+    }
+    if (wizardSpell) {
+        return SPELL_LEVEL_REQUIREMENT[casterClass][wizardSpell.level];
+    }
+    if (priestSpell) {
+        return SPELL_LEVEL_REQUIREMENT[casterClass][priestSpell.level]
+    }
+
+    return null
+}
+
+const getCasterFailureInfo = function (failureSystem, levelRequirement, casterLevel) {
+    let casterFailure = '';
+    let casterSingleClass = false;
+    if (failureSystem.includes('spell-level')) {
+        casterFailure = `{(${levelRequirement}-(${casterLevel}))*5,0}kh1`;
+        casterSingleClass = failureSystem === 'spell-level';
+    } else if (failureSystem.includes('casting-level')) {
+        casterFailure = `{((@{scroll-level})-(${casterLevel}))*5,0}kh1`;
+        casterSingleClass = failureSystem === 'casting-level';
+    }
+    return {casterFailure, casterSingleClass};
+}
+
+
+const getScrollRogueFailureInfo = function (failureSystem) {
+    let rogueClass;
+    let rogueFailure = '';
+    let rogueSingleClass = false;
+
+    if (failureSystem.includes('thief')) {
+        rogueClass = 'Thief';
+        rogueFailure = `100-({0,@{level-class4}}>10*75)`;
+        rogueSingleClass = failureSystem === 'thief';
+    } else if (failureSystem.includes('bard')) {
+        rogueClass = 'Bard';
+        rogueFailure = `100-({0,@{level-class4}}>10*85)`;
+        rogueSingleClass = failureSystem === 'bard';
+    }
+    return {
+        rogueClass: rogueClass,
+        rogueFailure: rogueFailure,
+        rogueSingleClass: rogueSingleClass,
+    };
+}
+
+
+on('change:scroll-failure-system', function (eventInfo) {
+    let failureSystem = eventInfo.newValue;
+    if (!failureSystem)
+        return;
+
+    // Handle the static values without any validation
+    if (failureSystem === 'custom') {
+        return;
+    } else if (failureSystem === 'disabled') {
+        TAS.repeating('scrolls')
+            .field('scroll-failure')
+            .each(function (row) {
+                row['scroll-failure'] =  '0';
+            })
+            .execute();
+        return;
+    }
+
+    getSectionIDs('scrolls', function (ids) {
+        let fullFieldNames = ['level-class2','level-class3','level-class4']
+        ids.forEach(id => fullFieldNames.push(`repeating_scrolls_${id}_scroll`,`repeating_scrolls_${id}_scroll-macro`));
+        getAttrs(fullFieldNames, async function (values) {
+            await keepContextRoll();
+
+            // Validate that the correct fields are filled out before proceeding
+            let wizardLevel = parseInt(values['level-class2']) || 0;
+            let priestLevel = parseInt(values['level-class3']) || 0;
+            let rogueLevel = parseInt(values['level-class4']) || 0;
+
+            if (failureSystem.includes('level') && !wizardLevel && !priestLevel &&
+                (failureSystem.includes('thief') || failureSystem.includes('bard')) && !rogueLevel) {
+                return showToast(WARNING, 'Missing Class levels', `You have no Wizard, Priest, or Rogue levels in the fields @{level-class2}, @{level-class3}, or @{level-class4}. Either the Wizard or Priest, and Rogue fields must be filled out for spell failure to be calculated correctly.\n\nGo to the tab Character Sheet -> Info -> Details and fill out the 'Class' and 'Level' fields.`);
+            }
+
+            if (failureSystem.includes('level') && !wizardLevel && !priestLevel) {
+                return showToast(WARNING, 'Missing Wizard/Priest level', `You have no Wizard or Priest levels in the fields @{level-class2} or @{level-class3}. Either of these fields must be filled out for spell failure to be calculated correctly.\n\nGo to the tab Character Sheet -> Info -> Details and fill out the 'Class' and 'Level' fields.`);
+            }
+
+            if ((failureSystem.includes('thief') || failureSystem.includes('bard')) && !rogueLevel) {
+                return showToast(WARNING, 'Missing Rogue level', `You have no Rogue level in the field @{level-class4}. This field must be filled out for spell failure to be calculated correctly.\n\nGo to the tab Character Sheet -> Info -> Details and fill out the 'Class' and 'Level' fields.`);
+            }
+
+            let newValues = {};
+            let unhandledScrolls = [];
+            let {rogueClass, rogueFailure, rogueSingleClass} = getScrollRogueFailureInfo(failureSystem);
+
+            // Set new failure chance for each scroll
+            for (let id of ids) {
+                if (rogueSingleClass) {
+                    newValues[`repeating_scrolls_${id}_scroll-failure`] = `${rogueFailure} [${rogueClass}]`;
+                    continue;
+                }
+
+                let scrollName = values[`repeating_scrolls_${id}_scroll`];
+                let scrollMacro = values[`repeating_scrolls_${id}_scroll-macro`];
+
+                let scrollSpells = getScrollSpells(scrollName);
+                let spLevelMatch = scrollMacro.match(/\{\{splevel=(.*?)}} *\{\{/);
+
+                let casterClassAndLevel = await getScrollCasterClassAndLevel(spLevelMatch, scrollName, scrollSpells);
+                if (!casterClassAndLevel) {
+                    unhandledScrolls.push(scrollName);
+                    continue;
+                }
+
+                let {casterClass, casterLevel} = casterClassAndLevel;
+                let levelRequirement = getScrollSpellLevelRequirement(spLevelMatch, scrollSpells, casterClass);
+                if (!levelRequirement && failureSystem.includes('spell-level')) {
+                    unhandledScrolls.push(scrollName);
+                    continue;
+                }
+
+                let {casterFailure, casterSingleClass} = getCasterFailureInfo(failureSystem, levelRequirement, casterLevel);
+
+                let spellFailure;
+                if (casterSingleClass) {
+                    spellFailure = `${casterFailure} [${casterClass}]`;
+                } else if (failureSystem.includes('best')) {
+                    spellFailure = `{[[${casterFailure}]] [${casterClass}], [[${rogueFailure}]] [${rogueClass}]}kl1`;
+                } else if (failureSystem.includes('select')) {
+                    casterFailure = casterFailure
+                        .replaceAll(/(?<!class\d|level)}/g,'&#125;')
+                        .replaceAll(',', '&#44;');
+                    rogueFailure = rogueFailure
+                        .replaceAll(/(?<!class\d|level)}/g,'&#125;')
+                        .replaceAll(',','&#44;');
+                    spellFailure = `?{Cast ${scrollName} as a ${casterClass} or a ${rogueClass}?|${casterClass},${casterFailure} [${casterClass}]|${rogueClass},${rogueFailure} [${rogueClass}]}`;
+                }
+
+                newValues[`repeating_scrolls_${id}_scroll-failure`] = spellFailure;
+            }
+
+            if (unhandledScrolls.length > 0) {
+                let toastObject = getToastObject(WARNING, 'Unhandled Scrolls', `Could not determine spell failure chance for the following scrolls. Please update them manually:\n* ${unhandledScrolls.join('\n* ')}`);
+                Object.assign(newValues, toastObject);
+            }
+
+            setAttrs(newValues);
+        })
+    });
+});
+
+on('change:repeating_scrolls:scroll', async function (eventInfo) {
+    let scrollName = eventInfo.newValue;
+    let scrollSpells = getScrollSpells(scrollName);
+    if (!scrollSpells)
+        return;
+
+    let spell;
+    let casterClass;
+    let casterLevel;
+
+    let {wizardSpell, priestSpell} = scrollSpells;
+    if (wizardSpell && priestSpell) {
+        casterClass = await extractQueryResult(`?{Is '${scrollName}' a Wizard or Priest scroll?|Wizard|Priest}`);
+        spell = casterClass === 'Wizard' ? wizardSpell : priestSpell;
+        casterLevel = casterClass === 'Wizard' ? '@{level-class2}' : '@{level-class3}';
+    } else if (wizardSpell) {
+        casterClass = 'Wizard';
+        spell = wizardSpell;
+        casterLevel = '@{level-class2}';
+    } else {
+        casterClass = 'Priest';
+        spell = priestSpell;
+        casterLevel = '@{level-class3}'
+    }
+
+    getAttrs([...BOOK_FIELDS, ...SCHOOL_FIELDS, ...SPHERE_FIELDS, 'scroll-failure-system'], async function(values) {
+        if (bookInactiveShowToast(values, spell))
             return
 
         let parse = parseSourceAttribute(eventInfo);
 
         let rollBuilder = new RollTemplateBuilder('2Espell');
         rollBuilder.push(`title=@{scroll}\n(Casting level @{scroll-level})`);
-        rollBuilder.push(`splevel=${displaySpellLevel(spell.level, spellClass)}`);
-        rollBuilder.push(`school=${getSpellSchools(spell, books)}`);
-        if (spellClass === 'Priest') {
-            let sphereRules = getActiveSettings(SPHERE_FIELDS, books);
+        rollBuilder.push(`splevel=${displaySpellLevel(spell.level, casterClass)}`);
+        rollBuilder.push(`school=${getSpellSchools(spell, values)}`);
+        if (casterClass === 'Priest') {
+            let sphereRules = getActiveSettings(SPHERE_FIELDS, values);
             rollBuilder.push(`sphere=${getSpellSpheres(spell, sphereRules)}`);
         }
         rollBuilder.push(`range=${spell['range']}`);
@@ -73264,23 +73844,40 @@ on('change:repeating_scrolls:scroll', async function (eventInfo) {
             .replaceAll('[[@{level-priest}]]', '[[@{scroll-level}]]');
 
         let recommendedMinimumLevel;
-
-        let spellLevel = parseInt(spell.level);
-        if (isNaN(spellLevel)) {
+        let levelRequirement = SPELL_LEVEL_REQUIREMENT[casterClass][spell.level];
+        if (levelRequirement < 6) {
             recommendedMinimumLevel = 6;
-        } else if (spellLevel <= 3) {
-            recommendedMinimumLevel = 6;
-        } else if (spellLevel === 4 || spellLevel === 5) {
-            recommendedMinimumLevel = spellLevel*2;
-        } else if (spellLevel === 6 && spellClass === 'Priest') {
-            recommendedMinimumLevel = spellLevel*2;
-        } else if (spellLevel >= 6) {
-            recommendedMinimumLevel = spellLevel*2+1
+        } else {
+            recommendedMinimumLevel = levelRequirement+1;
         }
 
-        let scribeLevel = await extractQueryResult(`?{At what level is ${eventInfo.newValue} scribed? (Recommended minimum is ${recommendedMinimumLevel}th level)|${recommendedMinimumLevel}}`);
+        let scribeLevel = await extractQueryResult(`?{At what level is ${scrollName} scribed? (Recommended minimum is ${recommendedMinimumLevel}th level)|${recommendedMinimumLevel}}`);
 
-        let spellFailure = await extractQueryResult(`?{What is the risk of spell failure for ${eventInfo.newValue}? (If you do not use this rule, set the value to 0)|0}`);
+        let failureSystem = values['scroll-failure-system'];
+
+        let {casterFailure, casterSingleClass} = getCasterFailureInfo(failureSystem, levelRequirement, casterLevel);
+        let {rogueClass, rogueFailure, rogueSingleClass} = getScrollRogueFailureInfo(failureSystem);
+
+        let spellFailure;
+        if (failureSystem === '' || failureSystem === 'disabled') {
+            spellFailure = '0';
+        } else if (failureSystem === 'custom') {
+            spellFailure = await extractQueryResult(`?{What is the risk of spell failure for ${scrollName}?|0}`);
+        } else if (rogueSingleClass) {
+            spellFailure = `${rogueFailure} [${rogueClass}]`;
+        } else if (casterSingleClass) {
+            spellFailure = `${casterFailure} [${casterClass}]`;
+        } else if (failureSystem.includes('best')) {
+            spellFailure = `{[[${casterFailure}]] [${casterClass}], [[${rogueFailure}]] [${rogueClass}]}kl1`;
+        } else if (failureSystem.includes('select')) {
+            casterFailure = casterFailure
+                .replaceAll(/(?<!class\d|level)}/g,'&#125;')
+                .replaceAll(',', '&#44;');
+            rogueFailure = rogueFailure
+                .replaceAll(/(?<!class\d|level)}/g,'&#125;')
+                .replaceAll(',','&#44;');
+            spellFailure = `?{Cast ${scrollName} as a ${casterClass} or a ${rogueClass}?|${casterClass},${casterFailure} [${casterClass}]|${rogueClass},${rogueFailure} [${rogueClass}]}`;
+        }
 
         let scrollInfo = {
             [`repeating_scrolls_${parse.rowId}_scroll-speed`]: spell['cast-time'],
@@ -73292,6 +73889,7 @@ on('change:repeating_scrolls:scroll', async function (eventInfo) {
         setAttrs(scrollInfo);
     });
 });
+//#endregion
 //#endregion
 
 on(`change:repeating_gem:gemvalue change:repeating_gem:gemqty remove:repeating_gem`, function(eventInfo) {
@@ -73529,13 +74127,13 @@ PSIONIC_CORE_SECTIONS.forEach(({section, name, macro, number, cost_number, disci
 
     on(`clicked:repeating_${section}:action-macro`, function (eventInfo) {
         let parse = parseSourceAttribute(eventInfo);
-        getAttrs([`repeating_${section}_${macro}`, 'psion-armor-penalty', 'character_name'], function (values) {
+        getAttrs([`repeating_${section}_${macro}`, 'psion-armor-penalty'], function (values) {
             let macroValue = values[`repeating_${section}_${macro}`];
 
             let isSecret = macroValue.match(/\{\{(secret=true)}}/);
             let powerRollMatch = macroValue.match(/\{\{(powerroll=.*?)}} *\{\{/);
             if (isSecret && powerRollMatch) {
-                macroValue = macroValue.replace(powerRollMatch[1], `powerroll=[Secret by DM](~${values.character_name}|repeating_${section}_${parse.rowId}_action-check-dm)`)
+                macroValue = macroValue.replace(powerRollMatch[1], `powerroll=[Secret by DM](~@{character_name}|repeating_${section}_${parse.rowId}_action-check-dm)`)
             }
 
             rollPsionicTemplate(macroValue, parse.rowId, values);
@@ -73588,6 +74186,8 @@ const FOLDABLE_REPEATING_SECTIONS = [
     ...PSIONIC_CORE_SECTIONS.map(e => e.section),
     'potions',
     'dusts',
+    'magic-items',
+    'wands',
     'scrolls',
 ];
 FOLDABLE_REPEATING_SECTIONS.forEach(section => {
@@ -73621,7 +74221,7 @@ on(BOOK_FIELDS.map(b => `change:${b}`).join(' '), function (eventInfo) {
 // --- Version change start --- //
 
 const SHEET_NAME = 'AD&D 2E Revised';
-const SHEET_VERSION = '4.20.0';
+const SHEET_VERSION = '4.21.0';
 
 on('sheet:opened', function(){
     getAttrs(['character_sheet'],function(attrs){
